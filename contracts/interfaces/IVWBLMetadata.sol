@@ -5,7 +5,7 @@ pragma solidity ^0.8.0;
  * @dev Interface of the VWBL NFT as defined in the
  * https://github.com/VWBL-protocol/contracts/ERC721/VWBL.sol
  */
-interface IVWBL {
+interface IVWBLMetadata {
     /**
      * @notice Get VWBL Fee
      */
@@ -13,11 +13,13 @@ interface IVWBL {
     
     /**
      * @notice Mint NFT, grant access feature and register access condition of digital content.
+     * @param _metadataURl The URl of nft metadata
      * @param _getKeyURl The URl of VWBL Network(Key management network)
      * @param _royaltiesPercentage Royalty percentage of NFT
      * @param _documentId The Identifier of digital content and decryption key
      */
     function mint(
+        string memory _metadataURl,
         string memory _getKeyURl, 
         uint256 _royaltiesPercentage, 
         bytes32 _documentId
